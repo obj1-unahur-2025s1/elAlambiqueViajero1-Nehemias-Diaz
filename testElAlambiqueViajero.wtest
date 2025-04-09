@@ -1,0 +1,32 @@
+import elAlambiqueViajero.*
+
+test "luke viaja a paris y conto" {
+  luke.viajarLugar(paris)
+  assert.equals("llavero torre eifel", luke.recuerdo())
+}
+
+test "luke viaja a las vegas cuando hace homenaje a paris" {
+  luke.viajarLugar(paris)
+  assert.equals("llavero torre eifel", luke.recuerdo())
+}
+
+test "luke viaja y gasta combustible" {
+  luke.viajarLugar(paris)
+  assert.that(alambiqueVeloz.tieneCombustible())
+}
+
+test "luke viaja muchas veces a paris y se queda sin combustible" {
+  luke.viajarLugar(paris)
+  luke.viajarLugar(paris)
+  luke.viajarLugar(paris)
+  luke.viajarLugar(paris)
+  luke.viajarLugar(paris)
+  luke.viajarLugar(paris)
+  luke.viajarLugar(paris)
+  luke.viajarLugar(paris)
+  luke.viajarLugar(paris)
+  luke.viajarLugar(paris)
+  luke.viajarLugar(paris)
+  luke.viajarLugar(paris)
+  assert.notThat(alambiqueVeloz.tieneCombustible())
+}
